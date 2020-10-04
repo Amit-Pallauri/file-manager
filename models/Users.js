@@ -1,0 +1,78 @@
+const { Schema, model } = require('mongoose')
+const { hash, compare } = require('bcryptjs')
+const  validator = require('validator')
+  
+const userSchema = new Schema({
+    name : {
+        type : String,
+        required : true,
+        trim : true,
+        minlength : 3
+    },
+    email:{
+        type : String,
+        required : true,
+        trim : true,
+        unique : true,
+        validate : {
+            validator : (data)=>{
+                return validator.isEmail(data)
+            },
+            message : props => `${props.value} is not a valid mail id ` 
+        }
+    },
+    password : {
+        type : String,
+        required : true,
+        trim : true,
+        minlength : 5
+    },
+    accessToken : {
+        type: String,
+        required: false
+    },
+    type : {
+        type : String,
+        required : true,
+        enum : ['user', 'admin'],
+    },
+    isAdmin : {
+        type : Boolean,
+        default : false,
+        required : false
+    },
+    files : [{
+        type : Schema.Types.ObjectId,
+        ref : 'files'
+    }]
+}, {timestamps : true })
+
+userSchema.statics.findByEmailAndPassword = async (email, password) =>{
+    try {
+        const foundUser = await User.findOne({email});
+        if(!foundUser) throw new Error('email not found');
+        const isMatched = await compare(password, foundUser.password);
+        if(!isMatched) throw new Error('incorrect password');
+        return foundUser;
+    } catch (error) {
+        error.name = 'AuthError';
+        throw error;
+    } 
+}
+
+userSchema.pre('save', async function(next){
+    const user = this 
+    try {
+        if(user.isModified('password')) {
+            const hashedPassword = await hash(user.password, 10);
+            user.password = hashedPassword
+            next();
+        }
+    } catch (error) {
+        console.error(error)
+        next(error)
+    }
+})
+
+const User = model('user', userSchema)
+module.exports = User

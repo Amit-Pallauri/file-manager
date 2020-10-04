@@ -1,0 +1,55 @@
+@import '~antd/dist/antd.css';
+/* navbar */
+.navbar {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    background: rgba(130, 185, 119, 0.575);
+}
+.brand{ 
+    padding-left: 20px;
+}
+.user-regd button{
+    padding: 5px 30px;
+    color: white;
+    margin :3px;
+    background : black;
+    border-radius: 15px;
+    outline : none;
+}
+/* home page */
+.home-page-logo p{
+    font-size: 80px;
+    /* position: absolute; */
+    left: 25%;
+    top: 30%;
+    color: rgba(29, 71, 29, 0.233);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.home-page-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 225px;
+    padding-left: 350px;
+    height: 77vh;
+    width: 70%;
+}
+.home-page-logo p{
+    font-size: 80px;
+    margin: 0;
+    padding: 0;
+    color: rgba(29, 71, 29, 0.233);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.home-page-logo Input.Search {
+    padding: 10px;
+}
+ #components-form-demo-control-hooks .ant-btn {
+   margin-right: 8px;
+ }
+
+ .notification{
+     margin-top: 10%;
+ }

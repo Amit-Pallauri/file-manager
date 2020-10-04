@@ -1,0 +1,49 @@
+.login-form-container{
+    background: rgb(87,196,162);
+    background: linear-gradient(45deg, rgba(87,196,162,1) 10%, rgba(40,56,48,0.6197829473586309) 77%);
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    height: 75vh;
+}
+
+.login-form{
+    display: flex;
+    border-radius: 8px;
+    flex-direction: column;
+    height: 320px;
+    width: 300px;
+    position: relative;
+    top: 35%;
+}
+
+.login-form h1{
+    text-align: center;
+    font-size: 28px;
+    color: rgba(179, 83, 49, 0.678);
+ }
+
+ .login-form input{
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    padding: 4px 15px;
+    margin: 15px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(184, 184, 6, 0.644);
+}
+
+.signin-image{
+    width: 500px;
+}
+
+.login-form input[type='submit']{
+    padding: 6px;
+    background: rgb(26, 17, 32);
+}
+

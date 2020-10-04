@@ -1,0 +1,40 @@
+.homePage-container{
+    height: 95vh;
+}
+.file-section{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    top: 5%;
+    width: 65%;
+    margin: auto;
+}
+
+.file-upload-section{
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.file-search button{
+    background: none;
+    border: none;
+    outline: none
+}
+
+.file-viewer-section{
+    margin: 10px;
+}
+
+.welcome-message{
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.spinner{
+    margin-right: 10px;
+}

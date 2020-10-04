@@ -1,0 +1,57 @@
+.register-form-container{
+    background: rgb(87,196,162);
+    background: linear-gradient(45deg, rgba(87,196,162,1) 10%, rgba(40,56,48,0.6197829473586309) 77%);
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    height: 75vh;
+}
+.register-form{
+    display: flex;
+    border-radius: 8px;
+    flex-direction: column;
+    height: 320px;
+    width: 300px;
+    position: relative;
+    top: 32%;
+}
+.register-form h1{
+    font-size: 25px;
+   text-align: center;
+   color: rgba(255, 255, 255, 0.678);
+}
+.register-form input{
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    padding: 4px 15px;
+    margin: 15px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(184, 184, 6, 0.644);
+}
+
+.register-form input[type='submit']{
+    padding: 6px;
+    background: rgb(26, 17, 32);
+}
+.drop-down{
+    background-color: black;
+    border-radius: 5px;
+    padding: 6px;
+    color: white;
+    width: 90%;
+    margin-left: 2vh;
+    outline: none;
+}
+.drop-down option{
+    background-color: black;
+}
+
+.signup-image{
+    width: 500px;
+}

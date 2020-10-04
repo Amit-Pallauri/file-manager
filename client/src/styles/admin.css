@@ -1,0 +1,20 @@
+.adminPage-container{
+    display: flex;
+    justify-content: space-around;
+}
+.users-files-section{
+    display: flex;
+    justify-content: space-evenly;
+    width: 55%;
+    margin-top: 2%;
+}
+.unverified-admins-section{
+    width: 40%;
+}
+.user-names{
+    width: 35%;
+}
+.focused-list:focus-visible{
+    background: black;
+    color: white;
+}
