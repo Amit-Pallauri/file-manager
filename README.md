@@ -1,4 +1,9 @@
-# Home Seek
-    a place where home seekers meet 
+# File Manager
+    User that has more files uploaded which will help to search
+    userName : apallauri@gmail.com
+    password : 123456 
 
-> ## features coming soon
+    A super admin who will accept the admin requests
+    userName : iamAdmin@gmail.com
+    passwword : 123456
+
