@@ -117,8 +117,11 @@ module.exports = {
         uploadedFiles.forEach( async el => {
                 if(el.originalname !== undefined ){
                     const fileContent = bufferToString( el.originalname, el.buffer)
-                    const { public_id, secure_url } = await cloudinary.uploader.upload(fileContent)
-                    Files.create({ fileName : el.originalname, file : secure_url }, (err, doc) => {
+                    const name = fileContent
+                    const response = await cloudinary.v2.uploader.upload(fileContent, {
+                        transformation : { flags : `attachment:file`, fetch_format : 'auto'}, format : 'pdf'
+                    })
+                    Files.create({ fileName : el.originalname, file : response.secure_url }, (err, doc) => {
                         if(err) console.log(err)
                         User.findByIdAndUpdate( userId.id, { $push : { files : doc._id } }).then().catch(err => console.log(err))
                         count +=1
