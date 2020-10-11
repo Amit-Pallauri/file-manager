@@ -117,7 +117,15 @@ module.exports = {
         uploadedFiles.forEach( async el => {
                 if(el.originalname !== undefined ){
                     const fileContent = bufferToString( el.originalname, el.buffer)
-                    const name = el.originalname.slice(0, el.originalname.indexOf('.'))
+                    
+                    let cutter = el.originalname.split('')
+                    let name = ''
+                    name = el.originalname.slice(0, el.originalname.indexOf('.'))
+                    cutter.forEach( elem => {
+                        if(elem == " "){
+                            name = el.originalname.slice(0, el.originalname.indexOf(elem))
+                        }
+                    })
                     const response = await cloudinary.v2.uploader.upload(fileContent, {
                         transformation : { flags : `attachment:${name}`, fetch_format : 'auto'}, format : 'pdf'
                     })
