@@ -1,1 +1,1 @@
-export const SERVER_BASE_URL = 'http://localhost:1234'
+export const SERVER_BASE_URL = 'https://intense-meadow-29481.herokuapp.com/'
